@@ -1,7 +1,7 @@
 console.log("here");
 
 var vm = new Vue({
-    el : "#app",
+    el: "#app",
     data: {
         title: "Nguyen Van A",
         url: "http://google.com"
@@ -21,7 +21,7 @@ setTimeout(() => {
 
 
 var vmCounter = new Vue({
-    el : "#counter",
+    el: "#counter",
     data: {
         counter: 0,
     },
@@ -33,7 +33,7 @@ var vmCounter = new Vue({
 })
 
 var vmDemoForm = new Vue({
-    el : "#demo-form",
+    el: "#demo-form",
     data: {
         demo_form: '',
     },
@@ -46,7 +46,7 @@ var vmDemoForm = new Vue({
 })
 
 var varDemoComputed = new Vue({
-    el : "#demo-computed",
+    el: "#demo-computed",
     data: {
         a: 10,
         b: 20,
@@ -69,6 +69,38 @@ var varDemoComputed = new Vue({
         plusB: function () {
             console.log('plus b running');
             return this.b;
+        }
+    }
+})
+
+var vmDemoStyling = new Vue({
+    el: "#demo-styling",
+    data: {
+        isActive: true,
+        isError: false,
+        color: "brown",
+        fontSize: 20
+    },
+    methods: {
+        changeActive:function () {
+            console.log("click to change active status");
+            this.isActive = !this.isActive;
+        },
+        zoomIn:function () {
+            console.log("click to zoom in");
+            this.fontSize += 1;
+        },
+        zoomOut:function () {
+            console.log("click to zoom out");
+            this.fontSize -= 1;
+        }
+    },
+    computed: {
+        objectClassStatus: function () {
+            return {active: this.isActive, error: this.isError};
+        },
+        objectStyling:function () {
+            return {color: this.color, fontSize: this.fontSize + 'px'};
         }
     }
 })

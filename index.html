@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="css/style.css">
     <title>Hello, world!</title>
 </head>
 <body>
@@ -39,6 +39,21 @@
     <button v-on:click="b++">B = B +1</button>
     <p>{{ a }} + {{ b }} = {{ plusA }}</p>
     <p>{{ a }} + {{ b }} = {{ plusB }}</p>
+</div>
+
+<hr/>
+<div id="demo-styling">
+    <h2>Bind class styling</h2>
+    <div class="text" v-bind:class="objectClassStatus">styling ...</div>
+    <button v-on:click="changeActive">Change Active</button>
+    <p v-bind:style="objectStyling">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum.</p>
+    <button v-on:click="zoomIn">Zoom In</button>
+    <button v-on:click="zoomOut">Zoom Out</button>
 </div>
 
 <!-- Optional JavaScript -->

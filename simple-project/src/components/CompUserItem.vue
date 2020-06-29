@@ -1,6 +1,7 @@
 <template>
   <div>
-    # {{user.id}} - {{user.name}}
+    # {{item.id}} - {{item.name}}
+    <button v-on:click="deleteUser()">Delete</button>
   </div>
 </template>
 <script>
@@ -8,10 +9,20 @@
     name: 'comp-user-item',
     props: {
       titleHeader: {type: String, default: ""},
-      user: {type: Object, default: {}}
+      item: {type: Object, default: {}}
     },
     data() {
       return {
+      }
+    },
+    methods: {
+      deleteUser() {
+        console.log("DeleteUser add use.vue");
+        const data = {
+          id : this.item.id,
+          name: this.item.name
+        };
+        this.$emit('UserListDeleteUser', data);
       }
     }
   }

@@ -2,8 +2,10 @@
   <div id="app">
     <img src="./assets/logo.png">
     <comp-header v-bind:title="title" v-on:myEventUpTest="handleChangeTitle"></comp-header>
-    <comp-user-list v-bind:title="title" v-on:myEventUpTest="handleChangeTitle" v-bind:users="users"></comp-user-list>
+    <comp-user-list v-bind:title="title" v-on:myEventUpTest="handleChangeTitle" v-bind:users="users"
+                    v-on:AppDeleteUser="deleteUser"></comp-user-list>
     <comp-footer v-bind:title="title" v-on:myEventUpTest="handleChangeTitle"></comp-footer>
+    <comp-upload-avatar/>
   </div>
 </template>
 
@@ -11,6 +13,7 @@
   import CompHeader from "./components/CompHeader.vue";
   import CompUserList from "./components/CompUserList";
   import CompFooter from "./components/CompFooter";
+  import CompUploadAvatar from "./components/CompUploadAvatar";
 
   const items = [
     {id: 1, name: "Andre", visible: true},
@@ -31,12 +34,26 @@
     components: {
       CompHeader,
       CompUserList,
-      CompFooter
+      CompFooter,
+      CompUploadAvatar
     },
     methods: {
       handleChangeTitle(data) {
         console.log(data);
         this.title = data.title;
+      },
+      deleteUser(data) {
+        console.log("DeleteUser add app.vue");
+        console.log(data);
+        let index_deleted = -1;
+        this.users.forEach((element, index) => {
+          if (element.id == data.id) {
+            // console.log(index, element.id, element.name);
+            index_deleted = index;
+          }
+        });
+        console.log(index_deleted);
+        this.users.splice(index_deleted, 1);
       }
     }
   }

@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <comp-header v-bind:title="title" v-on:myEventUpTest="handleChangeTitle()"></comp-header>
-    <comp-user-list v-bind:title="title" v-on:myEventUpTest="handleChangeTitle()"></comp-user-list>
-    <comp-footer v-bind:title="title" v-on:myEventUpTest="handleChangeTitle()"></comp-footer>
+    <comp-header v-bind:title="title" v-on:myEventUpTest="handleChangeTitle"></comp-header>
+    <comp-user-list v-bind:title="title" v-on:myEventUpTest="handleChangeTitle"></comp-user-list>
+    <comp-footer v-bind:title="title" v-on:myEventUpTest="handleChangeTitle"></comp-footer>
   </div>
 </template>
 
@@ -27,7 +27,7 @@
     methods: {
       handleChangeTitle(data) {
         console.log(data);
-        this.title = "Event Up Changed";
+        this.title = data.title;
       }
     }
   }

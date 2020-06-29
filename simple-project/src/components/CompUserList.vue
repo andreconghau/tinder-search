@@ -38,7 +38,7 @@
         const data = {
           title: 'Event up from user list'
         };
-        this.$emit('myEventUpTest', {title: "anc"});
+        this.$emit('myEventUpTest', data);
         // return console.log(e);
       }
     }

@@ -10,7 +10,7 @@ export default {
   name: 'CompHeader',
   data () {
     return {
-      header_text : "VUE TEXT from COMP HEADER"
+      header_text : "VUE TEXT from COMP Footer"
     };
   },
   props: {

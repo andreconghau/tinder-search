@@ -2,7 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <comp-header v-bind:title="title" v-on:myEventUpTest="handleChangeTitle"></comp-header>
-    <comp-user-list v-bind:title="title" v-on:myEventUpTest="handleChangeTitle"></comp-user-list>
+    <comp-user-list v-bind:title="title" v-on:myEventUpTest="handleChangeTitle" v-bind:users="users"></comp-user-list>
     <comp-footer v-bind:title="title" v-on:myEventUpTest="handleChangeTitle"></comp-footer>
   </div>
 </template>
@@ -12,11 +12,20 @@
   import CompUserList from "./components/CompUserList";
   import CompFooter from "./components/CompFooter";
 
+  const items = [
+    {id: 1, name: "Andre", visible: true},
+    {id: 2, name: "Thomas", visible: true},
+    {id: 3, name: "Steve", visible: true},
+    {id: 4, name: "Nelson", visible: false},
+    {id: 5, name: "Jason", visible: true}
+  ];
+
   export default {
     name: 'app',
     data() {
       return {
-        title: "test change title event up"
+        title: "test change title event up",
+        users: items
       }
     },
     components: {

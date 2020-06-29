@@ -1,6 +1,6 @@
 <template>
   <div>
-    # {{item.id}} - {{item.name}}
+    # {{user.id}} - {{user.name}}
   </div>
 </template>
 <script>
@@ -8,7 +8,7 @@
     name: 'comp-user-item',
     props: {
       titleHeader: {type: String, default: ""},
-      item: {type: Object, default: {}}
+      user: {type: Object, default: {}}
     },
     data() {
       return {

@@ -5,6 +5,11 @@ Vue.use(Vuex);
 const storage = new Vuex.Store({
   state: {
     counter: 0
+  },
+  getters: {
+    getTotalCounter: state => {
+      return state.counter * 10;
+    }
   }
 });
 

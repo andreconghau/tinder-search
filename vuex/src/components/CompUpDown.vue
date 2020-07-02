@@ -2,11 +2,15 @@
   <div>
     <button v-on:click="up">Up</button>
     <button v-on:click="down">down</button>
+    <button v-on:click="plusParam(100)">Plus Pram Mutation</button>
+    <button v-on:click="minusCounterByParam({number:25})">Minus Pram mapMutation</button>
   </div>
 </template>
 
 
 <script>
+  import { mapMutations } from 'vuex'
+
   export default {
     name: "CompUpDown",
     data() {
@@ -17,12 +21,18 @@
     methods: {
       up() {
         console.log("press up");
-        this.$store.state.counter ++;
+        this.$store.state.counter++;
       },
       down() {
         console.log("press down");
-        this.$store.state.counter --;
-      }
+        this.$store.state.counter--;
+      },
+      plusParam(param) {
+        this.$store.commit('plusCounterByParam', param);
+      },
+      ...mapMutations(
+        ['minusCounterByParam']
+      )
     }
   }
 </script>

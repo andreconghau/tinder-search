@@ -9,6 +9,17 @@ const storage = new Vuex.Store({
   getters: {
     getTotalCounter: state => {
       return state.counter * 10;
+    },
+    getCounter: state => {
+      return state.counter;
+    }
+  },
+  mutations: {
+    plusCounterByParam: (state, param) => {
+      state.counter = state.counter + param;
+    },
+    minusCounterByParam: (state, payload) => {
+      state.counter = state.counter - payload.number;
     }
   }
 });

@@ -4,12 +4,15 @@
     <button v-on:click="down">down</button>
     <button v-on:click="plusParam(100)">Plus Pram Mutation</button>
     <button v-on:click="minusCounterByParam({number:25})">Minus Pram mapMutation</button>
+    <button v-on:click="syncUpCounter">Sync MapActions</button><button v-on:click="asyncUpCounter">ASync MapActions</button>
+
   </div>
 </template>
 
 
 <script>
-  import { mapMutations } from 'vuex'
+  import {mapMutations} from 'vuex'
+  import {mapActions} from 'vuex'
 
   export default {
     name: "CompUpDown",
@@ -30,9 +33,8 @@
       plusParam(param) {
         this.$store.commit('plusCounterByParam', param);
       },
-      ...mapMutations(
-        ['minusCounterByParam']
-      )
+      ...mapMutations(['minusCounterByParam']),
+      ...mapActions(['syncUpCounter', 'asyncUpCounter'])
     }
   }
 </script>

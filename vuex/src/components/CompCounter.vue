@@ -4,7 +4,6 @@
     <h2>Getters with (counter*10)) => {{getterTenTimes}}</h2>
     <h2>MapGetters with getTotalCounter => {{getTotalCounter}}</h2>
     <h2>MapGetters with counter => {{counter}}</h2>
-    <h2>MapMutation with counter =></h2>
   </div>
 </template>
 

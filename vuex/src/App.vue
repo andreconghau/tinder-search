@@ -5,6 +5,8 @@
     <h2>Vuex</h2>
     <comp-counter/>
     <comp-up-down/>
+    <hr/>
+    <comp-model/>
   </div>
 </template>
 
@@ -12,6 +14,7 @@
 
   import CompUpDown from "./components/CompUpDown";
   import CompCounter from "./components/CompCounter";
+  import CompModel from "./components/CompModel";
 
   export default {
     name: 'app',
@@ -22,7 +25,8 @@
     },
     components: {
       CompUpDown,
-      CompCounter
+      CompCounter,
+      CompModel
     }
   }
 </script>

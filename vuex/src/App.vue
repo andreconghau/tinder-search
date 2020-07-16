@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <button v-on:click="changeMsg">Test Watch</button>
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
     <h2>Vuex</h2>
@@ -27,6 +28,16 @@
       CompUpDown,
       CompCounter,
       CompModel
+    },
+    watch: {
+      msg(newValue) {
+        console.log(`watch changed: ${newValue}`);
+      }
+    },
+    methods: {
+      changeMsg(){
+        this.msg = "Change new value";
+      }
     }
   }
 </script>

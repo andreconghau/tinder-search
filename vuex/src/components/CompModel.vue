@@ -2,6 +2,8 @@
   <div>
     <input type="text" :value="valueInput" @input="updateValue">
     <h2>Vuex V-Model: {{valueInput}}</h2>
+    Demo set get v-model
+    <input type="text" v-model="valueInputSetGet">
   </div>
 </template>
 
@@ -26,6 +28,14 @@
     computed: {
       valueInput() {
         return this.$store.getters.getValue;
+      },
+      valueInputSetGet: {
+        set(valueInputSetGet){
+          this.$store.dispatch('syncUpValue', {value: valueInputSetGet});
+        },
+        get(){
+          return this.$store.getters.getValue;
+        }
       }
     }
   }

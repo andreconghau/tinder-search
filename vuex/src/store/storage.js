@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import User from './modules/user';
+import Comment from './modules/comment';
 
 Vue.use(Vuex);
 const storage = new Vuex.Store({
@@ -45,6 +47,10 @@ const storage = new Vuex.Store({
     syncUpValue: (injectee, payload) => {
       injectee.commit('updateValue', payload);
     },
+  },
+  modules: {
+    User,
+    Comment
   }
 });
 

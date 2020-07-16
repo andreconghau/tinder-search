@@ -2,8 +2,8 @@
   <div id="app">
     <button v-on:click="changeMsg">Test Watch</button>
     <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Vuex</h2>
+    <h1>{{ msg | toUpperCase}}</h1>
+    <h2>{{ label | toLowerCase}}</h2>
     <comp-counter/>
     <comp-up-down/>
     <hr/>
@@ -21,7 +21,8 @@
     name: 'app',
     data() {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'Welcome to Your Vue.js App',
+        label: 'Vue Practice'
       }
     },
     components: {
@@ -35,8 +36,13 @@
       }
     },
     methods: {
-      changeMsg(){
+      changeMsg() {
         this.msg = "Change new value";
+      }
+    },
+    filters: {
+      toUpperCase(text) {
+        return text.toUpperCase();
       }
     }
   }

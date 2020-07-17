@@ -10,6 +10,7 @@
     <comp-model/>
     <hr/>
     <comp-list-filter/>
+    <comp-list-filter-second/>
   </div>
 </template>
 
@@ -19,6 +20,7 @@
   import CompCounter from "./components/CompCounter";
   import CompModel from "./components/CompModel";
   import CompListFilter from "./components/CompListFilter";
+  import CompListFilterSecond from "./components/CompListFilterSecond";
 
   export default {
     name: 'app',
@@ -32,7 +34,8 @@
       CompUpDown,
       CompCounter,
       CompModel,
-      CompListFilter
+      CompListFilter,
+      CompListFilterSecond
     },
     watch: {
       msg(newValue) {

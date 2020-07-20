@@ -11,6 +11,8 @@
     <hr/>
     <comp-list-filter/>
     <comp-list-filter-second/>
+    <hr/>
+    <comp-fire-base/>
   </div>
 </template>
 
@@ -21,6 +23,7 @@
   import CompModel from "./components/CompModel";
   import CompListFilter from "./components/CompListFilter";
   import CompListFilterSecond from "./components/CompListFilterSecond";
+  import CompFireBase from "./components/CompFireBase";
 
   export default {
     name: 'app',
@@ -35,7 +38,8 @@
       CompCounter,
       CompModel,
       CompListFilter,
-      CompListFilterSecond
+      CompListFilterSecond,
+      CompFireBase
     },
     watch: {
       msg(newValue) {
